@@ -15,6 +15,7 @@ dependencies:
   flutter_secure_storage:
   localstorage:
   http:
+  dio:
   equatable:
 
 
