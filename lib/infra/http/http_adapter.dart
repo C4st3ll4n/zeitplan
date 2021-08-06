@@ -40,6 +40,7 @@ class HttpAdapter implements HttpClient {
             .timeout(
               Duration(seconds: 10),
             );
+        print("body::${response.body}-status::${response.statusCode}");
       } else if (method == "get") {
         response = await client
             .get(
