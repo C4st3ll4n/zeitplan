@@ -28,9 +28,32 @@ class _ContactsPageState extends State<ContactsPage> {
       appBar: AppBar(
         title: Text("Zeitplan"),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                //presenter go to add contact
+              },
+              icon: Icon(Icons.person_add)),
+        ],
       ),
       body: Builder(
         builder: (_) {
+          StreamBuilder<bool>(
+            stream: presenter.isLoadingStream,
+            builder: (_, snap) {
+              if (snap.data == true) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else {
+                return Container(
+                  width: 0,
+                  height: 0,
+                );
+              }
+            },
+          );
+
           return StreamBuilder<List<ContactEntity>>(
               stream: presenter.contactsStream,
               builder: (context, snapshot) {
