@@ -1,5 +1,5 @@
 import '../entity/entity.dart';
 
 abstract class LoadContacts {
-  Future<List<ContactEntity>> load();
+  Future<List<ContactEntity?>?> load();
 }
