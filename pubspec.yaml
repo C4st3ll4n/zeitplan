@@ -16,7 +16,11 @@ dependencies:
   localstorage:
   http:
   dio:
+  get:
   equatable:
+  carousel_slider:
+  url_launcher:
+  provider:
 
 
 dev_dependencies:
