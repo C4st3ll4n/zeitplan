@@ -5,9 +5,11 @@ class ZeitplanApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-      child: Text("Seja bem vindo ao Zeitplan !"),
-    ));
+    return MaterialApp(
+      home: Scaffold(
+          body: Container(
+        child: Text("Seja bem vindo ao Zeitplan !"),
+      )),
+    );
   }
 }
