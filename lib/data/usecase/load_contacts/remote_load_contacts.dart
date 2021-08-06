@@ -17,11 +17,11 @@ class RemoteLoadContacts implements LoadContacts {
       required this.client});
 
   @override
-  Future<List<ContactEntity?>?> load() async {
+  Future<List<ContactEntity>> load() async {
     try {
       final response = await client.request(url: placeHolderUrl, method: "get");
 
-      List<ContactEntity?> contacts = await _mapEntity(response);
+      List<ContactEntity> contacts = await _mapEntity(response);
       print(contacts);
       return contacts;
     } on HttpError catch (error) {
@@ -31,8 +31,8 @@ class RemoteLoadContacts implements LoadContacts {
     }
   }
 
-  Future<List<ContactEntity?>> _mapEntity(var response) async {
-    List<ContactEntity?> contatos = [];
+  Future<List<ContactEntity>> _mapEntity(var response) async {
+    List<ContactEntity> contatos = [];
 
     for (var json in response) {
       final String cpf = await _generateCPF();
