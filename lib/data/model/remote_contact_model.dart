@@ -34,7 +34,7 @@ class RemoteContactModel extends Equatable {
     }
     final String fullName = contact[kName];
     final String firstName = fullName.split(" ")[0];
-    final String lastName = fullName.split(" ")[0];
+    final String lastName = fullName.split(" ")[1];
     final String email = contact[kEmail];
     final String cpf = contact[kCPF];
 
